@@ -17,7 +17,7 @@ class MediaConverter {
 
     public function __construct($filename) {
         $this->filename = $filename;
-        if (($bin = find_existing_file(['/usr/bin/ffmpeg', '/usr/local/bin/ffmpeg'])) !== false)
+        if (($bin = find_existing_file(['/usr/bin/ffmpeg', '/usr/local/bin/ffmpeg', '/bin/ffmpeg'])) !== false)
             $this->encoder = new Encoders\Ffmpeg($bin);
         else
             throw new \Extension('No available encoders in your system. Please visit http://github.com/wapmorgan/MediaConverter/README.md to solve this problem.');
