@@ -2,6 +2,14 @@
 
 namespace wapmorgan\MediaConverter;
 
+function find_existing_file($files) {
+    foreach ($files as $file) {
+        if (file_exists($file))
+            return $file;
+    }
+    return false;
+}
+
 class MediaConverter {
 
     public $filename;
