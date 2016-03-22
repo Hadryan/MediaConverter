@@ -22,7 +22,7 @@ class OptionsValidator {
         foreach ($this->options as $option =>$value) {
             if (!isset($this->rules[$option])) {
                 throw new Exceptions\InvalidOptionException('This method doesn\'t accept option '.$option.'.');
-            } '.
+            }
         if (isset($this->rules[$option]['expr'])) {
             if (!preg_match('~'.$this->rules[$option]['expr'].'~', $value))
                 throw new Exceptions\InvalidOptionException('Option "'.$option.'" is invalid: '.(isset($this->rules[$option]['text']) ? $this->rules[$option]['text'] : 'format should be '.$this->rules[$option]['expr']));
