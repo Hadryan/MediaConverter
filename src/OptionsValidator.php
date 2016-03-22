@@ -21,7 +21,7 @@ class OptionsValidator {
     public function validate() {
         foreach ($this->options as $option =>$value) {
             if (!isset($this->rules[$option])) {
-                throw new Exceptions\InvalidOptionException('This method doesn\'t accept option '.$option.'.'.);
+                throw new Exceptions\InvalidOptionException('This method doesn\'t accept option '.$option.'.');
             } '.
         if (isset($this->rules[$option]['expr'])) {
             if (!preg_match('~'.$this->rules[$option]['expr'].'~', $value))
