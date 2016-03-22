@@ -1,0 +1,9 @@
+{
+    "name": "wapmorgan/media-converter",
+    "description": "Audio, video editor, converter to popular formats and preview maker",
+    "autoload": {
+        "psr-4": {
+            "wapmorgan\\MediaConverter\\": "src/"
+        }
+    }
+}
