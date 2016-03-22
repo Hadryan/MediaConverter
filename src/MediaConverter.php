@@ -29,7 +29,14 @@ class MediaConverter {
             $filename = null;
         }
 
-        $optionsValidator = new OptionsValidator($options, []);
+        $optionsValidator = new OptionsValidator($options, [
+            'b' => ['expr' => '^[0-9]+k?$', 'text' => 'bitrate should be a numeric with an optional "k".'],
+            'r' => ['expr' => '^[0-9]+(\.[0-9]+)?$', 'text' => 'rate should be a numeric with an optional "float point".'],
+            's' => ['expr' => '^[0-9]+x[0-9]+$', 'text' => 'size should be two digits  joined by "x".'],
+            'ab' => ['expr' => '^[0-9]+k?$', 'text' => 'audio bitrate should be a numeric with an optional "k".'],
+            'ac' => ['expr' => '^[1-9]+$', 'text' => 'audio channels should be a numeric.'],
+        ]);
+        $optionsValidator->validate();
 
         $result = $this->encoder->convert($this->filename, $filename == null ? $this->filename : $filename, $options);
 
