@@ -1,6 +1,7 @@
 {
     "name": "wapmorgan/media-converter",
-    "description": "Audio, video editor, converter to popular formats and preview maker",
+    "description": "Audio and video editor, converter to popular formats and preview maker",
+    "license": "GPL-3.0",
     "autoload": {
         "psr-4": {
             "wapmorgan\\MediaConverter\\": "src/"
