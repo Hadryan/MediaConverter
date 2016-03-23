@@ -1,8 +1,21 @@
 # MediaConverter
 Audio and video editor, converter to popular formats and preview maker.
 
+## Installation
+You can install MediaConverter through composer:
+```
+composer install wapmorgan/media-converter
+```
+
+## Example
+Simple example of converting any file to 3gp format.
+```php
+$conv = new wapmorgan\MediaConverter\MediaConverter('filename.avi');
+$conv->convertTo3gp('filename');
+```
+
 ## API
-[__construct($filename)](#user-content-construct)
+[__construct($filename)](#user-content-__constructfilename)
 
 [__convertTo3gp([$filename,] array $options)](#user-content-convertto3gpfilename-array-options)
 
