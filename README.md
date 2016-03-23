@@ -2,27 +2,27 @@
 Audio and video editor, converter to popular formats and preview maker.
 
 ## API
-[__construct($filename)](#__construct)
+[__construct($filename)](#user-content-construct)
 
-[__convertTo3gp([$filename,] array $options)](#convertTo3gp_filename_array_options)
+[__convertTo3gp([$filename,] array $options)](#user-content-convertto3gpfilename-array-options)
 
-[__convertToAvi([$filename,] array $options)](#convertToAvi_filename_array_options)
+[__convertToAvi([$filename,] array $options)](#user-content-converttoavifilename-array-options)
 
-[__convertToMp4([$filename,] array $options)](#convertToMp4_filename_array_options)
+[__convertToMp4([$filename,] array $options)](#user-content-converttomp4filename-array-options)
 
-[__convertToMov([$filename,] array $options)](#convertToMov_filename_array_options)
+[__convertToMov([$filename,] array $options)](#user-content-converttomovfilename-array-options)
 
-[__convertToMpeg([$filename,] array $options)](#convertToMpeg_filename_array_options)
+[__convertToMpeg([$filename,] array $options)](#user-content-converttompegfilename-array-options)
 
-[__convertToMkv([$filename,] array $options)](#convertToMkv_filename_array_options)
+[__convertToMkv([$filename,] array $options)](#user-content-converttomkvfilename-array-options)
 
-[__convertToMp3([$filename,] array $options)](#convertToMp3_filename_array_options)
+[__convertToMp3([$filename,] array $options)](#user-content-converttomp3filename-array-options)
 
-[__convertToWav([$filename,] array $options)](#convertToWav_filename_array_options)
+[__convertToWav([$filename,] array $options)](#user-content-converttowavfilename-array-options)
 
-[__convertToAmr([$filename,] array $options)](#convertToAmr_filename_array_options)
+[__convertToAmr([$filename,] array $options)](#user-content-converttoamrfilename-array-options)
 
-[__convertToAac([$filename,] array $options)](#convertToAac_filename_array_options)
+[__convertToAac([$filename,] array $options)](#user-content-converttoaacfilename-array-options)
 
 ### __construct($filename)
 Just a constructor. `$filename` is a video or audio file.
