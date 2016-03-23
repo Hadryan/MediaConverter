@@ -3,15 +3,25 @@ Audio and video editor, converter to popular formats and preview maker.
 
 ## API
 [__construct($filename)](#__construct)
+
 [__convertTo3gp([$filename,] array $options)](#convertTo3gp_filename_array_options)
+
 [__convertToAvi([$filename,] array $options)](#convertToAvi_filename_array_options)
+
 [__convertToMp4([$filename,] array $options)](#convertToMp4_filename_array_options)
+
 [__convertToMov([$filename,] array $options)](#convertToMov_filename_array_options)
+
 [__convertToMpeg([$filename,] array $options)](#convertToMpeg_filename_array_options)
+
 [__convertToMkv([$filename,] array $options)](#convertToMkv_filename_array_options)
+
 [__convertToMp3([$filename,] array $options)](#convertToMp3_filename_array_options)
+
 [__convertToWav([$filename,] array $options)](#convertToWav_filename_array_options)
+
 [__convertToAmr([$filename,] array $options)](#convertToAmr_filename_array_options)
+
 [__convertToAac([$filename,] array $options)](#convertToAac_filename_array_options)
 
 ### __construct($filename)
