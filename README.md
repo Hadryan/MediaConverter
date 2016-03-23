@@ -129,6 +129,7 @@ Converts the file to amr format and saves result as `$filename`. If filename is 
 ### convertToAac([$filename,] array $options)
 Converts the file to aac format and saves result as `$filename`. If filename is not specified, it rewrites original file.
 `$options` holds all converting options. Available options described in this table:
+
 | option | meaning | description |
 |---|---|---|---|---|
 | ab | audio bitrate | Audio bitrate. Should be look like video bitrate like `128k` |
