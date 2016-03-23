@@ -135,3 +135,6 @@ Converts the file to aac format and saves result as `$filename`. If filename is 
 | ab | audio bitrate | Audio bitrate. Should be look like video bitrate like `128k` |
 | ac | audio channels | Number of audio channels. Should be a natural number like `1` or `2` |
 
+## Troubleshooting
+1. **No available encoders in your system. Please check ...**. Make sure you use unix/linux-based OS and have installed program **ffmpeg**.
+
