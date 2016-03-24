@@ -11,7 +11,7 @@ composer install wapmorgan/media-converter
 Simple example of converting any file to 3gp format.
 ```php
 $conv = new wapmorgan\MediaConverter\MediaConverter('filename.avi');
-$conv->convertTo3gp('filename');
+$conv->convertTo3gp('filename.3gp');
 ```
 
 ## API
