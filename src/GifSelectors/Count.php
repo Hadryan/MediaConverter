@@ -2,4 +2,12 @@
 
 namespace wapmorgan\MediaConverter\GifSelectors;
 
-class Count {}
+class Total extends Abstract {
+
+    public $count;
+
+    public function __construct($count) {
+        $this->count = $count;
+    }
+
+}
