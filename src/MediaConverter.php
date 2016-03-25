@@ -230,4 +230,46 @@ class MediaConverter {
         return !$this->getIsAudio();
     }
 
+    public function join($filename, $output) {
+        return $this->encoder->join($this->filename, $filename, $output);
+    }
+
+    public function cut($start, $end, $output) {
+        $length = $this->getLength();
+        if ($start > $length || $end > $length)
+            throw new \InvalidArgumentException('Start and end time can\'t be bigger media length ('.$length.')');
+        if ($end < $start)
+            throw new \InvalidArgumentException('End time should be bigger or equal start');
+
+        $result = $this->cut($this->filename, $start, $end, $output);
+
+        return $result;
+    }
+
+    public function makeGif(GifSelectors\Abstract $selector, $options, $output) {
+        $length = $this->getLength();
+        $frames = [];
+        switch (get_class($selector)) {
+            case 'GifSelectors\Every':
+                for ($i = 0; $i < $length; $i += $selector->interval)
+                    $frames[] = $i;
+                break;
+
+            case 'GifSelectors\Total':
+                $step = floor($length / $selector->count);
+                for ($i = 0; $i < $length; $i += $step)
+                    $frames[] = $i;
+                break;
+        }
+
+        foreach ($frames as $i => $time) {
+            $frames[$i] = $this->encoder->getFrame($this->filename, $time, (isset($options['s']) ? ['s' => $options['s']] : []);
+        }
+
+        $gc = new \GifCreator();
+        $gc->create($frames, array_fill(count($frames), isset($options['delay']) ? $options['delay'] : 200), isset($options['repeatitions']) ? $options['repeatitions'] : 5);
+
+        return file_put_contents($output, $gc->getGif());
+    }
+
 }
