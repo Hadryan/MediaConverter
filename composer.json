@@ -6,5 +6,8 @@
         "psr-4": {
             "wapmorgan\\MediaConverter\\": "src/"
         }
+    },
+    "require": {
+        "sybio/gif-creator": "1.0.0"
     }
 }
