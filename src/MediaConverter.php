@@ -262,6 +262,13 @@ class MediaConverter {
                 break;
         }
 
+        $optionsValidator = new OptionsValidator($options, [
+            'delay' => ['expr' => '^[1-9][0-9]*$', 'text' => 'delay should be a positive number.'],
+            'repeatitions' => ['expr' => '^[1-9][0-9]*$', 'text' => 'repeatitions should be a positive number.'],
+            's' => ['expr' => '^[0-9]+x[0-9]+$', 'text' => 'size should be two digits  joined by "x".'],
+        ]);
+        $optionsValidator->validate();
+
         foreach ($frames as $i => $time) {
             $frames[$i] = $this->encoder->getFrame($this->filename, $time, (isset($options['s']) ? ['s' => $options['s']] : []);
         }
