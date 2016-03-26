@@ -53,7 +53,7 @@ class Ffmpeg {
 
     public function getLength($filename) {
         $output = shell_exec($this->bin.' -i '.$filename);
-        preg_match('/Duration: ([0-9]{2}):([0-9]{2}):([^ ,])+/', $output, $matches);
+        preg_match('/Duration: ([0-9]{2}):([0-9]{2}):([0-9]+)/', $output, $matches);
         return $matches[1]*3600 + $matches[2]*60 + $matches[3];
     }
 
