@@ -279,4 +279,8 @@ class MediaConverter {
         return file_put_contents($output, $gc->getGif());
     }
 
+    public function getLength() {
+        return $this->encoder->getLength($this->filename);
+    }
+
 }
