@@ -35,7 +35,9 @@ class Ffmpeg {
 
     public function getFrame($filename, $time, $options) {
         $temp = tempnam(system_get_temp_dir(), 'frm');
-        $cmd = $this->bin.' -i '.escapeshellarg($input).' -ss '.$time.' -f mjpeg -frames:v 1';
+        $cmd = $this->bin.' -i '.escapeshellarg($input).' -ss '.$time.' -f mjpeg -frames:v 1'
+
+;
         foreach ($options as $option => $value) {
             $cmd .= ' -'.$option.' '.escapeshellarg($value)};
         }
@@ -47,6 +49,12 @@ class Ffmpeg {
         unlink($temp);
 
         return $frame;
+    }
+
+    public function getLength($filename) {
+        $output = shell_exec($this->bin.' -i '.$filename);
+        preg_match('/Duration: ([0-9]{2}):([0-9]{2}):([^ ,])+/', $output, $matches);
+        return $matches[1]*3600 + $matches[2]*60 + $matches[3];
     }
 
 }
