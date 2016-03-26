@@ -1,7 +1,6 @@
 # MediaConverter
 Audio and video editor, converter to popular formats and preview maker.
 
-
 ## Installation
 You can install MediaConverter through composer:
 ```
@@ -9,13 +8,13 @@ composer install wapmorgan/media-converter
 ```
 
 ## Example
-1. Simple example of converting any file to 3gp format.
+* Simple example of converting any file to 3gp format.
 ```php
 $conv = new wapmorgan\MediaConverter\MediaConverter('filename.avi');
 $conv->convertTo3gp('filename.3gp');
 ```
 
-2. Simple example of creating preview from video.
+* Simple example of creating preview with original frame size from video.
 ```php
 $conv = new wapmorgan\MediaConverter\MediaConverter('filename.avi');
 $conv->makeGif(new wapmorgan\MediaConverter\GifSelectors\Total(4), [], 'preview.gif');
@@ -169,6 +168,7 @@ Cuts the video from `$start` to `$end` seconds and saves result as `$output`.
 
 ### makeGif(GifSelectors\Abstract $selector, $options, $output)
 Creates a gif preview from the video. `$selector` can be one of following objects:
+
 1. **wapmorgan\MediaConverter\GifSelectors\Every** - create preview from frames every **N** seconds.
 2. **wapmorgan\MediaConverter\GifSelectors\Total** - creates preview of total **N** frames from video.
 `$options` holds few options of converting and making options.
