@@ -1,6 +1,7 @@
 # MediaConverter
 Audio and video editor, converter to popular formats and preview maker.
 
+
 ## Installation
 You can install MediaConverter through composer:
 ```
@@ -8,10 +9,16 @@ composer install wapmorgan/media-converter
 ```
 
 ## Example
-Simple example of converting any file to 3gp format.
+1. Simple example of converting any file to 3gp format.
 ```php
 $conv = new wapmorgan\MediaConverter\MediaConverter('filename.avi');
 $conv->convertTo3gp('filename.3gp');
+```
+
+2. Simple example of creating preview from video.
+```php
+$conv = new wapmorgan\MediaConverter\MediaConverter('filename.avi');
+$conv->makeGif(new wapmorgan\MediaConverter\GifSelectors\Total(4), [], 'preview.gif');
 ```
 
 ## API
@@ -41,7 +48,7 @@ $conv->convertTo3gp('filename.3gp');
 
 [cut($start, $end, $output)](#user-content-cutstart-end-output)
 
-[makeGif(GifSelectors\Abstract $selector, $options, $output)](#user-content-makegifgifselectorsabstract_selector_options_output)
+[makeGif(GifSelectors\Abstract $selector, $options, $output)](#user-content-makegifgifselectorsabstract-selector-options-output)
 
 ### __construct($filename)
 Just a constructor. `$filename` is a video or audio file.
