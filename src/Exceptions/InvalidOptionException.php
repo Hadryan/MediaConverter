@@ -1,4 +1,7 @@
 <?php
+
 namespace wapmorgan\MediaConverter\Exceptions;
 
-class InvalidOptionException extends \Exception {}
+class InvalidOptionException extends \Exception {
+
+}
