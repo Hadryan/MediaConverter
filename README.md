@@ -171,11 +171,13 @@ Creates a gif preview from the video. `$selector` can be one of following object
 
 1. **wapmorgan\MediaConverter\GifSelectors\Every** - create preview from frames every **N** seconds.
 2. **wapmorgan\MediaConverter\GifSelectors\Total** - creates preview of total **N** frames from video.
+
 `$options` holds few options of converting and making options.
 Available options described in this table:
 
 | option | meaning | description |
 |---|---|---|---|---|
+| s | size | Video frame size. Should be two digits joined by "x" like `720x340` |
 | delay |  | Delay between frames. Should be a positive number in msec like `200` |
 | repeatitions |  | Number of repeatitions of frames. If value is `0`, then gif will be infinite. Should be a natural number like `5` |
 
